@@ -67,3 +67,12 @@ DELIMITER ;
 ```diff
 select convert_temp(2.3);
 ```
+# Example 3: Calculate square of a number
+DELIMITER $$
+CREATE FUNCTION calculate_square(num INT) RETURNS INT
+DETERMINISTIC
+BEGIN
+    RETURN num * num;
+END$$
+DELIMITER ;
+select calculate_square(3)
