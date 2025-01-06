@@ -67,7 +67,9 @@ DELIMITER ;
 ```diff
 select convert_temp(2.3);
 ```
-# Example 3: Calculate square of a number
+# Example 3: Calculate the square of a number
+
+```diff
 DELIMITER $$
 CREATE FUNCTION calculate_square(num INT) RETURNS INT
 DETERMINISTIC
@@ -75,4 +77,45 @@ BEGIN
     RETURN num * num;
 END$$
 DELIMITER ;
+```
+
+```diff
 select calculate_square(3)
+```
+# Example 4: Calculate the cube of a number
+
+```diff
+DELIMITER $$
+CREATE FUNCTION calculate_cube(num INT) RETURNS INT
+DETERMINISTIC
+BEGIN
+    RETURN num * num * num;
+END$$
+DELIMITER ;
+
+SELECT calculate_cube(3);
+```
+# Example 5: Calculate the perimeter of a rectangle
+Hint: The perimeter of a rectangle is 2 * (length + width).
+```diff
+DELIMITER $$
+CREATE FUNCTION rectangle_perimeter(length DECIMAL(5, 2), width DECIMAL(5, 2)) RETURNS DECIMAL(5, 2)
+DETERMINISTIC
+BEGIN
+    RETURN 2 * (length + width);
+END$$
+DELIMITER ;
+
+SELECT rectangle_perimeter(5, 3);
+```
+# Example 6: Determine if a number is even or odd
+Hint:
+
+Input: An integer (num INT).
+Output: A string (VARCHAR(5)) indicating "Even" or "Odd".
+A number is even if it is divisible by 2 (i.e., num % 2 = 0); otherwise, it is odd.
+Use a conditional statement (IF) to check the result of the modulo operation.
+For example, if the input is 4, the result is "Even", and if the input is 5, the result is "Odd
+
+-
+
