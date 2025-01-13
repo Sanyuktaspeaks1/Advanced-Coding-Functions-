@@ -243,3 +243,87 @@ SELECT
     END AS experience_level;
 ```
 
+# Some keywords you must remember
+```diff
+1.How can you calculate 2^3
+Hint: Use the POW() or POWER() function to raise a number to a power.
+SELECT POW(2, 3) AS result;  -- Returns 8
+
+
+2. Square Root of a Number
+Question: How can you calculate the square root of 16?
+Hint: Use the SQRT() function to get the square root of a number.
+SELECT SQRT(16) AS result;  -- Returns 4
+
+3. Absolute Value
+Question: How can you get the absolute value of -15?
+Hint: Use the ABS() function to return the absolute value.
+SELECT ABS(-15) AS result;  -- Returns 15
+
+4. Rounding Numbers
+Question: How can you round 3.6 to the nearest integer?
+Hint: Use the ROUND() function to round a number.
+SELECT ROUND(3.6) AS result;  -- Returns 4
+
+5. Rounding Down
+Question: How can you round 4.9 down to the nearest integer?
+Hint: Use the FLOOR() function to round down.
+SELECT FLOOR(4.9) AS result;  -- Returns 4
+
+6. Rounding Up
+Question: How can you round 2.3 up to the nearest integer?
+Hint: Use the CEIL() or CEILING() function to round up.
+SELECT CEIL(2.3) AS result;  -- Returns 3
+
+7. Modulus (Remainder)
+Question: How can you find the remainder when dividing 10 by 3?
+Hint: Use the MOD() function to get the remainder.
+SELECT MOD(10, 3) AS result;  -- Returns 1
+
+8. Natural Logarithm
+Question: How can you calculate the natural logarithm of 10?
+Hint: Use the LOG() function for the natural logarithm.
+SELECT LOG(10) AS result;  -- Returns 2.302
+
+
+9. Exponential of a Number
+Question: How can you calculate 
+e^2
+Hint: Use the EXP() function to calculate 
+ SELECT EXP(2) AS result;  -- Returns 7.389
+
+
+10. String Length
+Question: How can you find the length of the string "Hello"?
+Hint: Use the LENGTH() function to calculate the length of a string.
+SELECT LENGTH('Hello') AS result;  -- Returns 5
+
+
+
+
+11. Find the Maximum Value
+Question: How can you find the maximum value between 5 and 8?
+Hint: Use the GREATEST() function to return the larger of the two numbers.
+SELECT GREATEST(5, 8) AS result;  -- Returns 8
+
+12. Find the Minimum Value
+Question: How can you find the minimum value between 3 and 10?
+Hint: Use the LEAST() function to return the smaller of the two numbers.
+SELECT LEAST(3, 10) AS result;  -- Returns 3
+
+13. Convert String to Uppercase
+Question: How can you convert the string "hello" to uppercase?
+Hint: Use the UPPER() function to convert a string to uppercase.
+SELECT UPPER('hello') AS result;  -- Returns 'HELLO'
+
+14. Convert String to Lowercase
+Question: How can you convert the string "WORLD" to lowercase?
+Hint: Use the LOWER() function to convert a string to lowercase.
+SELECT LOWER('WORLD') AS result;  -- Returns 'world'
+
+15. Get the Current Date
+Question: How can you get the current date?
+Hint: Use the CURDATE() function to retrieve the current date.
+SELECT CURDATE() AS result;  -- Returns current date (e.g., '2025-01-13')
+return this and remove the 2 words   and
+```
