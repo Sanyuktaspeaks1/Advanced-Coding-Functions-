@@ -116,6 +116,25 @@ Output: A string (VARCHAR(5)) indicating "Even" or "Odd".
 A number is even if it is divisible by 2 (i.e., num % 2 = 0); otherwise, it is odd.
 Use a conditional statement (IF) to check the result of the modulo operation.
 For example, if the input is 4, the result is "Even", and if the input is 5, the result is "Odd
+```diff
+DELIMITER $$
+CREATE FUNCTION is_even(num INT) RETURNS VARCHAR(5)
+DETERMINISTIC
+BEGIN
+    RETURN IF(num % 2 = 0, 'Even', 'Odd');
+END$$
+DELIMITER ;
 
+SELECT is_even(4);
+```
 -
-
+# @ in MySQL
+- In MySQL, the @ symbol defines or references user-defined session variables. These variables exist for the duration of the session and can be used to store values temporarily.
+```diff
+SET @name = 'Alice';
+SELECT @name; -- Output: 'Alice'
+```
+```diff
+SET @x = 10, @y = 20;
+SELECT @x + @y; -- Output: 30
+```
