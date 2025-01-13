@@ -189,3 +189,19 @@ SELECT
         ELSE 'Adult'
     END AS age_group;
 ```
+# How can you categorize product prices into "Budget," "Mid-Range," and "Premium"?
+- Define the Price Ranges:
+```diff
+"Budget" products have prices less than $50.
+"Mid-Range" products are priced between $50 and $150 (inclusive).
+"Premium" products are priced higher than $150.
+Use a CASE Statement:
+
+Use WHEN for each price range and assign the appropriate category.
+Use ELSE for any price that doesn’t fit into the above ranges.
+Test with an Example:
+
+For @price = 30, the result should be 'Budget'.
+For @price = 100, the result should be 'Mid-Range'.
+For @price = 200, the result should be 'Premium'.
+```
