@@ -205,3 +205,41 @@ For @price = 30, the result should be 'Budget'.
 For @price = 100, the result should be 'Mid-Range'.
 For @price = 200, the result should be 'Premium'.
 ```
+```diff
+SET @price = 100;
+
+SELECT 
+    CASE 
+        WHEN @price < 50 THEN 'Budget'
+        WHEN @price BETWEEN 50 AND 150 THEN 'Mid-Range'
+        ELSE 'Premium'
+    END AS price_category;
+```
+# Determining Employee Experience Levels
+```diff
+Think About Experience Levels:
+
+"Junior" employees have less than 3 years of experience.
+"Mid-Level" employees have between 3 and 7 years (inclusive).
+"Senior" employees have more than 7 years of experience.
+Use a CASE Statement:
+
+Each range corresponds to a specific level.
+The ELSE clause captures any experience greater than 7 years.
+Test with an Example:
+
+For @experience = 2, the result should be 'Junior'.
+For @experience = 5, the result should be 'Mid-Level'.
+For @experience = 10, the result should be 'Senior'
+```
+```diff
+SET @experience = 5;
+
+SELECT 
+    CASE 
+        WHEN @experience < 3 THEN 'Junior'
+        WHEN @experience BETWEEN 3 AND 7 THEN 'Mid-Level'
+        ELSE 'Senior'
+    END AS experience_level;
+```
+
