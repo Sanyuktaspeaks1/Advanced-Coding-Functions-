@@ -327,3 +327,86 @@ Hint: Use the CURDATE() function to retrieve the current date.
 SELECT CURDATE() AS result;  -- Returns current date (e.g., '2025-01-13')
 return this and remove the 2 words   and
 ```
+
+# Calculate the Area of a Circle
+- Input: The radius of the circle (radius DECIMAL).
+- Output: The area of the circle (DECIMAL).
+- Use the formula: Area = 𝜋 * r^2
+```diff
+DELIMITER $$
+CREATE FUNCTION circle_area(radius DECIMAL(5, 2)) RETURNS DECIMAL(5, 2)
+DETERMINISTIC
+BEGIN
+    RETURN PI() *POW (radius,2);
+END$$
+DELIMITER ;
+
+SELECT circle_area(3);  -- Returns 28.27
+```
+# Check if a Number is Divisible by 3
+- Input: A number (num INT).
+- Output: A string ("Yes" or "No") indicating whether the number is divisible by 3.
+- A number is divisible by 3 if the result of num % 3 = 0.
+```diff
+DELIMITER $$
+CREATE FUNCTION divisible_by_3(num INT) RETURNS VARCHAR(3)
+DETERMINISTIC
+BEGIN
+    RETURN IF(num % 3 = 0, 'Yes', 'No');
+END$$
+DELIMITER ;
+
+SELECT divisible_by_3(9);  -- Returns 'Yes'
+```
+
+# Find the Maximum of Two Numbers
+- Input: Two numbers (num1 INT, num2 INT).
+- Output: The maximum of the two numbers.
+- Use the GREATEST() function to find the maximum value
+```diff
+DELIMITER $$
+CREATE FUNCTION max_of_two(num1 INT, num2 INT) RETURNS INT
+DETERMINISTIC
+BEGIN
+    RETURN GREATEST(num1, num2);
+END$$
+DELIMITER ;
+
+SELECT max_of_two(8, 5);  -- Returns 8
+```
+#  Check Leap Year
+- Input: A year (year INT).
+- Output: A string ("Leap Year" or "Not Leap Year").
+- A year is a leap year if it is divisible by 4, but not divisible by 100, unless it is divisible by 400.
+
+```diff
+DELIMITER $$
+CREATE FUNCTION leap_year(year INT) RETURNS VARCHAR(15)
+DETERMINISTIC
+BEGIN
+    IF (year % 4 = 0 AND year % 100 != 0) OR (year % 400 = 0) THEN
+        RETURN 'Leap Year';
+    ELSE
+        RETURN 'Not Leap Year';
+    END IF;
+END$$
+DELIMITER ;
+
+SELECT leap_year(2020);  -- Returns 'Leap Year'
+```diff
+DELIMITER $$
+CREATE FUNCTION leap_year(year INT) RETURNS VARCHAR(15)
+DETERMINISTIC
+BEGIN
+    IF (year % 4 = 0 AND year % 100 != 0) OR (year % 400 = 0) THEN
+        RETURN 'Leap Year';
+    ELSE
+        RETURN 'Not Leap Year';
+    END IF;
+END$$
+DELIMITER ;
+
+SELECT leap_year(2020);  -- Returns 'Leap Year'
+```
+
+ 
