@@ -111,11 +111,11 @@ SELECT rectangle_perimeter(5, 3);
 # Example 6: Determine if a number is even or odd
 Hint:
 
-Input: An integer (num INT).
-Output: A string (VARCHAR(5)) indicating "Even" or "Odd".
-A number is even if it is divisible by 2 (i.e., num % 2 = 0); otherwise, it is odd.
-Use a conditional statement (IF) to check the result of the modulo operation.
-For example, if the input is 4, the result is "Even", and if the input is 5, the result is "Odd
+- Input: An integer (num INT).
+- Output: A string (VARCHAR(5)) indicating "Even" or "Odd".
+- A number is even if it is divisible by 2 (i.e., num % 2 = 0); otherwise, it is odd.
+- Use a conditional statement (IF) to check the result of the modulo operation.
+- For example, if the input is 4, the result is "Even", and if the input is 5, the result is "Odd
 ```diff
 DELIMITER $$
 CREATE FUNCTION is_even(num INT) RETURNS VARCHAR(5)
