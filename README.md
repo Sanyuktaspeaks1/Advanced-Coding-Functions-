@@ -138,11 +138,11 @@ SELECT @name; -- Output: 'Alice'
 SET @x = 10, @y = 20;
 SELECT @x + @y; -- Output: 30
 ```
-# Revise loop if you don`t know using the following examples( If you know loops feel free to scroll down and attempt the remaining questions)
+# CAUTION ( If you know loops feel free to scroll down and attempt the remaining questions)
 
 ```diff
- - If it  cannot be used alone it has to be used inside a procedure, function or a trigger
- - If you just want to check the condition without creating a stored procedure, use CASE in a SELECT statement:
+ - If it cannot be used alone it has to be used inside a procedure, function or a trigger
+ - If you want to check the condition without creating a stored procedure, use CASE in a SELECT statement:
 ```
 ```diff
 SET @number = 5;
@@ -153,4 +153,39 @@ SELECT
         ELSE 'The number is not positive.'
     END AS result;
 ```
+- IF you don`t use as result you get an unclean o/p
+- ![image](https://github.com/user-attachments/assets/de6ddcc8-a130-4111-bc4f-af4f22ece681)
+
 - CASE is used in SQL queries as an expression for conditional logic and doesn't require IF, THEN, or ELSEIF. Instead, the logic is directly written using WHEN, THEN, and ELSE
+
+# Example
+```diff
+SET @day = 'Saturday';
+
+SELECT 
+    CASE @day
+        WHEN 'Saturday' THEN 'Weekend'
+        WHEN 'Friday' THEN 'Weekend'
+        ELSE 'Weekday'
+    END AS day_category;
+```
+
+# How can you categorize a person's age into groups such as "Child," "Teenager," or "Adult"?
+- If the age is less than 13, return 'Child'.
+- If the age is between 13 and 19, return 'Teenager'.
+- If the age is greater than 19, return 'Adult'.
+- Use a CASE Statement:
+
+- Use WHEN to check conditions for different ranges.
+- Use THEN to specify the result for each condition.
+- Don't forget an ELSE clause for the default result when no conditions match.
+```diff
+  SET @age = 17;
+
+SELECT 
+    CASE 
+        WHEN @age < 13 THEN 'Child'
+        WHEN @age BETWEEN 13 AND 19 THEN 'Teenager'
+        ELSE 'Adult'
+    END AS age_group;
+```
