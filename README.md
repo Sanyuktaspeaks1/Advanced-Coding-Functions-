@@ -138,3 +138,19 @@ SELECT @name; -- Output: 'Alice'
 SET @x = 10, @y = 20;
 SELECT @x + @y; -- Output: 30
 ```
+# Revise loop if you don`t know using the following examples( If you know loops feel free to scroll down and attempt the remaining questions)
+
+```diff
+ - If it  cannot be used alone it has to be used inside a procedure, function or a trigger
+ - If you just want to check the condition without creating a stored procedure, use CASE in a SELECT statement:
+```
+```diff
+SET @number = 5;
+
+SELECT 
+    CASE 
+        WHEN @number > 0 THEN 'The number is positive.'
+        ELSE 'The number is not positive.'
+    END AS result;
+```
+- CASE is used in SQL queries as an expression for conditional logic and doesn't require IF, THEN, or ELSEIF. Instead, the logic is directly written using WHEN, THEN, and ELSE
