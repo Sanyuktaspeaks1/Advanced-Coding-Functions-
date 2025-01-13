@@ -408,5 +408,19 @@ DELIMITER ;
 
 SELECT leap_year(2020);  -- Returns 'Leap Year'
 ```
+- MySQL server's settings to allow the creation of non-deterministic functions
+  ```diff
+  SET GLOBAL log_bin_trust_function_creators = 1;
+  ```
+  ```diff
+  DELIMITER $$
+CREATE FUNCTION current_datetime() RETURNS DATETIME
+READS SQL DATA
+BEGIN
+    RETURN NOW();  -- Returns the current date and time
+END$$
+DELIMITER ;
 
+SELECT current_datetime();  -- Returns the current date and time
+```
  
