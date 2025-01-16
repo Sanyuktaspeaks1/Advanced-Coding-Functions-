@@ -163,11 +163,11 @@ SELECT
 SET @day = 'Saturday';
 
 SELECT 
-    CASE @day
-        WHEN 'Saturday' THEN 'Weekend'
-        WHEN 'Friday' THEN 'Weekend'
-        ELSE 'Weekday'
-    END AS day_category;
+    CASE
+    WHEN @day = 'Saturday' THEN 'Weekend'
+    WHEN @day = 'Friday' THEN 'Weekend'
+    ELSE 'Weekday'
+END AS day_category;
 ```
 
 # How can you categorize a person's age into groups such as "Child," "Teenager," or "Adult"?
@@ -412,7 +412,7 @@ SELECT leap_year(2020);  -- Returns 'Leap Year'
   ```diff
   SET GLOBAL log_bin_trust_function_creators = 1;
   ```
-  ```diff
+```diff
   DELIMITER $$
 CREATE FUNCTION current_datetime() RETURNS DATETIME
 READS SQL DATA
